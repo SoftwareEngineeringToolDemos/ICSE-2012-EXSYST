@@ -6,6 +6,9 @@ EXSYST - A tool for search based GUI testing
 
 This repository contains information related to the tool EXSYST presented at International Conference of Software Engineering, 2012. The tool was originally presented in [this paper](http://dl.acm.org/citation.cfm?id=2337435).
 
+Project Description
+Test generation tools commonly aim to cover structural artefacts of software, such as the source code or the user interface. However, focusing only on source code can lead to unrealistic or irrelevant test cases, while exploring a user interface often misses much of the underlying program behavior. The EXSYST tool takes a new approach by exploring user interfaces while aiming to maximize code coverage, thus combining the best of both worlds. Experiments show that such an approach can achieve high code coverage matching and exceeding the code coverage of traditional unit-based test generators; yet, by construction every test case is realistic and relevant, and every detected failure can be shown to be caused by a real sequence of input events.
+
 This repository _is not_ the original repository for this tool. Here are some links to the original project:
 * [The Official Project Page](http://www.exsyst.org/)
 * [Executable Jar for the tool](http://www.st.cs.uni-saarland.de/exsyst/exsyst.jar)
