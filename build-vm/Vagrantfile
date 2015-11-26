@@ -1,6 +1,6 @@
 Vagrant.configure(2) do |config|
 
-  config.vm.box = "ubuntu/trusty32"
+  config.vm.box = "boxcutter/ubuntu1404-desktop"
 
   config.vm.provider "virtualbox" do |vb|
 
@@ -16,6 +16,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
 
+	 #Installing java 6
      sudo add-apt-repository -y ppa:webupd8team/java
 
      sudo apt-get update
@@ -23,12 +24,33 @@ Vagrant.configure(2) do |config|
      echo "oracle-java6-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
      
      sudo apt-get install -y oracle-java6-installer
-
-     sudo apt-get install -y ubuntu-desktop
-
-     sudo gsettings set org.gnome.desktop.screensaver lock-enabled false
-
-     sudo reboot
+	 #End - Installing java 6
+     
+	#Creating files on Desktop
+	sudo wget -O /home/vagrant/Desktop/ExsystDesktop.tar.gz https://github.com/SoftwareEngineeringToolDemos/ICSE-2012-EXSYST/raw/master/build-vm/ExsystDesktop.tar.gz
+	tar zxvf /home/vagrant/Desktop/ExsystDesktop.tar.gz -C /home/vagrant/Desktop/
+        
+    rm /home/vagrant/Desktop/ExsystDesktop.tar.gz
+	
+	# Add terminal as startup application
+	sudo mkdir "/home/vagrant/.config/autostart"
+	sudo cp Desktop/exsyst.desktop /home/vagrant/.config/autostart/exsyst.desktop
+		
+	# Remove unnecessary launcher applications
+	sudo rm -f "/usr/share/applications/ubuntu-amazon-default.desktop"
+	sudo rm -f "/usr/share/applications/libreoffice-calc.desktop"
+	sudo rm -f "/usr/share/applications/libreoffice-writer.desktop"
+	sudo rm -f "/usr/share/applications/libreoffice-impress.desktop"
+	sudo rm -f "/usr/share/applications/ubuntu-software-center.desktop"
+	
+	# Disable screen lockout
+	mv /home/vagrant/Desktop/login_desktop.sh /home/vagrant/login_desktop.sh
+	sudo update-desktop-database
+	sudo cp /home/vagrant/Desktop/login_desktop.sh.desktop /etc/xdg/autostart/login_desktop.sh.desktop
+	rm /home/vagrant/Desktop/login_desktop.sh.desktop
+	
+	# Reboot the VM
+    sudo reboot
 
   SHELL
 
