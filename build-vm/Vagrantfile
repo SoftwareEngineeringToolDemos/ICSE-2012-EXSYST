@@ -34,7 +34,7 @@ Vagrant.configure(2) do |config|
 	
 	# Add terminal as startup application
 	sudo mkdir "/home/vagrant/.config/autostart"
-	sudo cp Desktop/exsyst.desktop /home/vagrant/.config/autostart/exsyst.desktop
+	sudo mv Desktop/exsyst.desktop /home/vagrant/.config/autostart/exsyst.desktop
 		
 	# Remove unnecessary launcher applications
 	sudo rm -f "/usr/share/applications/ubuntu-amazon-default.desktop"
