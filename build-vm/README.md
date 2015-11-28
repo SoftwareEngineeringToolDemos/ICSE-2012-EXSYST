@@ -8,6 +8,9 @@ __Virtual Box used:__ [box-cutter/ubuntu1404-desktop](https://vagrantcloud.com/b
 * Create a new folder and place this [Vagrantfile](https://github.com/SoftwareEngineeringToolDemos/ICSE-2012-EXSYST/blob/master/build-vm/Vagrantfile) in it.
 * Run the command "vagrant up" in terminal in the folder created in above step. This will create a new ubuntu 14.04v virtual machine and installs exsyst.jar, oracle java 6 and all required files in it.
 * Wait for the GUI to show up and then can start using
+* Credentials for login.
+  * Username: vagrant
+  * Password: vagrant
 
 
 ### References:
