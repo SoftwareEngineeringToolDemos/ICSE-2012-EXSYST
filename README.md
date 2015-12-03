@@ -16,5 +16,6 @@ This repository _is not_ the original repository for this tool. Here are some li
 
 In this repository, for EXSYST you will find:
 * :white_check_mark: [JAR File of the tool and sample applications](https://github.com/SoftwareEngineeringToolDemos/ICSE-2012-EXSYST/blob/master/EXSYST%20Tool.7z)
+* :white_check_mark: [Virtual machine containing tool] (https://drive.google.com/a/ncsu.edu/file/d/0B4GmC78WO_1xTGtLZUZ3SDN1Z1k/view?usp=sharing)
 
 This repository was constructed by [Rishi Vardhineni](https://github.com/rkvardhi) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson). Thanks to Gordon Fraser, Florian Gross and Andreas Zeller for their help in establishing this repository. 
